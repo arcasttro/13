@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Avaliação</title>
+        <meta charset="utf-8"/>
+        <style type="text/css">
+        	input[type=number]{ border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;box-shadow: 1px 1px 2px #333333;-moz-box-shadow: 1px 1px 2px #333333;-webkit-box-shadow: 1px 1px 2px #333333;background: #7fd4f1; border:2px solid #204754;width:150px}textarea{border: 1px solid #000000;background:#cccccc;width:150px;height:100px;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;box-shadow: 1px 1px 2px #333333;-moz-box-shadow: 1px 1px 2px #333333;-webkit-box-shadow: 1px 1px 2px #333333;}input[type=number]:hover, textarea:hover{          background: #b1e2f3; border:2px solid #052935;}input[type=submit]{        background:#006699;        color:#ffffff;}     	
+        	input[type=number]::-webkit-inner-spin-button {-webkit-appearance: none;}
+			input[type=number] {-moz-appearance: textfield;appearance: textfield;}
+        	body {
+        		background: white url(https://www.academiaonegocio.com.br/wp-content/uploads/2018/11/FUNDO-WEB-academia.jpg) 
+        		top center;        		 
+        	}
+        	header{
+        		font-family: "Franklin Gothic Medium", sans-serif;
+        	} 
+        	h2{
+        		font-family: "Trebuchet MS", Arial, "Times New Roman", Georgia;
+        	}
+        	blockquote{
+        		font-family: "Franklin Gothic Medium";
+        	} 
+        	
+        	.apresentacao{        		       	
+        		font-style: oblique;
+        		font-size: 28px;
+        		font-variant: small-caps;        		
+        		color: #A9F5F2;
+        		margin-block-start: 2em;
+    			margin-block-end: 2em;
+    			margin-inline-start: 36%;
+    			margin-inline-end: 100px;	
+        	}
+        	.instrucao1{        		
+        		font-size: 17px;
+        		color: white;        			
+        	}
+        	.caixa{
+        	 	font-size: 19.3px;        		
+        		color: black;
+        		text-align: center;        		    		
+        	}
+        	.fundo{	        	
+	    		margin-block-start: 1em;
+	    		margin-block-end: 1em;
+	    		margin-inline-start: 40px;
+	    		margin-inline-end: 40px;
+        	}
+        	.botao{
+                font-family: "Franklin Gothic Medium"      
+                font-size: 15px;
+                color: #f7f7f7;
+                padding: 7px 13px;
+                background: -webkit-gradient(
+                    linear, left top, left bottom,
+                    from(#de1010),
+                    to(#000000));
+                background: linear-gradient(
+                    top,
+                    #de1010 0%,
+                    #000000);
+                border-radius: 79px;
+                border: 2px solid #080008;
+                box-shadow:
+                    0px 1px 4px rgba(0,0,0,0.3),
+                    inset 0px 0px 1px rgba(0,0,0,0.7);                
+                margin-inline-start: 3px;
+                margin-block-start: 5px;
+            }
+        	
+            .numerodecampos{
+        		font-size: 20px;
+        	}        	
+        	.caixaexterna{
+        		position: relative;
+        		margin-inline-start: 2.5em;
+        	}
+
+
+        		
+
+        </style> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>       	
+    </head>
+    <body> 
+    	<header class= "apresentacao"> 
+    		<p> 
+    			<strong>Bem vindo!</strong> </br>Você está em um teste matemático. 
+    		</p> 
+    	</header>
+    	<hr/>
+    	
+
+        <blockquote class= "fundo">
+        	<h2 class= "instrucao1" >Insira um valor entre 0 e 10:</h2>
+        	<div id="campos">
+        		<form>
+        			<div>
+        				<input class="caixa" name="campo[]" type="number" min=0 max=10 onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+        			</div>
+
+                    <input class="botao" type="button" id="add_campos" value="Gerar">
+
+        		</form>
+        	</div>
+        <br>
+        <br>
+        <br>        
+        </blockquote>
+
+        <script type="text/javascript">        	
+			var i;
+			for (i=$(".caixa").val(); i<=10; i++){
+                $('#campos').append('<div>'+'<input type="number" name="campo[]">');
+			}
+
+        var campos_max          = 10;   //max de 10 campos
+
+        var x = 0;
+        $('#add_campos').click (function(e) {
+                e.preventDefault();     //prevenir novos clicks
+                if (x < campos_max) {
+                        
+                        x++;
+                }
+        });  
+        
+
+
+        </script>
+
+
+
+    </body>
+</html>
